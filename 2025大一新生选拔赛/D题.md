@@ -46,7 +46,7 @@ int main() {
         scanf("%d", &a[i]);
     }
 
-    int p1 = a[0] * a[1] * a[N - 1];
+    int p1 = a[0] * a[1] * a[n - 1];
     int p2 = a[n - 1] * a[n - 2] * a[n - 3];
     if(p1 > p2){
       printf("%d\n", p1);
