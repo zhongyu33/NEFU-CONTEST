@@ -62,22 +62,17 @@ $$\frac{a_1}{2} - \frac{a_2}{2} + \frac{a_3}{2} - \frac{a_4}{2} = 0 \implies a_1
 using namespace std;
 
 void solve() {
-    // 使用 long long 确保计算交替和时不会溢出
     long long a1, a2, a3, a4;
 
     if (!(cin >> a1 >> a2 >> a3 >> a4)) {
         return;
     }
 
-    // --- 1. 奇偶性检查 ---
-    // 所有数字必须是偶数
     if (a1 % 2 != 0 || a2 % 2 != 0 || a3 % 2 != 0 || a4 % 2 != 0) {
         cout << "NO" << endl;
         return;
     }
 
-    // --- 2. 不变量检查 ---
-    // 检查交替和 a1 - a2 + a3 - a4 是否为 0
     long long alternating_sum = a1 - a2 + a3 - a4;
 
     if (alternating_sum == 0) {
@@ -88,7 +83,6 @@ void solve() {
 }
 
 int main() {
-    // 提高输入/输出效率
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
@@ -105,31 +99,18 @@ int main() {
 #include <stdio.h>
 #include <stdlib.h> // 包含 abs 函数（虽然这里用 % 2 更好，但对于通用性可以了解）
 
-/**
- * 求解“相邻数字操作归零问题”。
- * 输入 a1, a2, a3, a4。
- * 范围 [-10^5, 10^5]，使用 int 足够。
- */
 int main() {
     int a1, a2, a3, a4;
 
-    // 从标准输入读取四个数字
     if (scanf("%d %d %d %d", &a1, &a2, &a3, &a4) != 4) {
         return 0; // 读取失败
     }
 
-    // --- 1. 奇偶性检查 ---
-    // 任何操作都使数字变化偶数，所以所有数字必须是偶数。
-    // 注意：C 语言中负数的 % 2 结果可能是 -1，
-    // 但 (a % 2 != 0) 能正确判断非偶数（即奇数）。
     if (a1 % 2 != 0 || a2 % 2 != 0 || a3 % 2 != 0 || a4 % 2 != 0) {
         printf("NO\n");
         return 0;
     }
 
-    // --- 2. 不变量检查 ---
-    // 检查交替和 a1 - a2 + a3 - a4 是否为 0。
-    // 由于输入范围较小，使用 int 存储交替和不会溢出。
     int alternating_sum = a1 - a2 + a3 - a4;
 
     if (alternating_sum == 0) {
