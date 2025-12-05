@@ -52,7 +52,7 @@ int main() {
       printf("%d\n", p1);
     }
     else{
-      printf("%d\n", p1);
+      printf("%d\n", p2);
     }
     return 0;
 }
